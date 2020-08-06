@@ -10,4 +10,15 @@ export function getCities() {
             },
         },
     }
+    
+export function getCityByName(name){
+    return {
+        type: 'GET_CITIES_BY_SEARCHVALUE',
+        payload: {
+            request: {
+                method: 'GET',
+                url: 'weather?q='+name+'&appid=50f578d622c291089e8f21a8d2730398',
+            },
+        },
+    }
 }
