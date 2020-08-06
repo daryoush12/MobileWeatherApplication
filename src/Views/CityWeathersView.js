@@ -19,7 +19,7 @@ class CityWeathersView extends Component {
 
     render() {
         const { weatherData } = this.props
-
+        console.log(weatherData)
         return (
             <Container>
                 <Header>
@@ -30,7 +30,11 @@ class CityWeathersView extends Component {
                 </Header>
                 <Content>
                     <CityFilterBar></CityFilterBar>
-                    <CityList citylist={weatherData.list}></CityList>
+                    <CityList
+                        citylist={
+                            weatherData.filteredData ? weatherData.filteredData : weatherData.list
+                        }
+                    ></CityList>
                 </Content>
             </Container>
         )
