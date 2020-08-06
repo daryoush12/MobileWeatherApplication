@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import City from '../City'
 import { FlatList, StyleSheet, Text, View } from 'react-native'
-import { FahrenheitToCelsius } from '../../Utils/DataConversion'
 
 const styles = StyleSheet.create({
     item: {
@@ -23,7 +22,7 @@ function CityList({ citylist }) {
                     renderItem={({ item }) => (
                         <Text style={styles.item}>
                             {item.name}
-                            {FahrenheitToCelsius(item.main.temp)} °C
+                            {item.main.temp} °C
                             {item.weather.description}
                         </Text>
                     )}
