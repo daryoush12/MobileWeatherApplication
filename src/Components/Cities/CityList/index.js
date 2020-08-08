@@ -1,36 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import City from '../City'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { Text } from 'react-native'
+import { Content, Card } from 'native-base'
 
-const styles = StyleSheet.create({
-    item: {
-        padding: 10,
-        fontSize: 18,
-        height: 44,
-    },
-})
-
-function CityList({ citylist }) {
-    console.log('CityList Render')
-    console.log(citylist)
+function CityList({ citylist, navigation }) {
     return (
-        <View>
+        <Content>
             {citylist ? (
-                <FlatList
-                    data={citylist}
-                    renderItem={({ item }) => (
-                        <Text style={styles.item}>
-                            {item.name}
-                            {item.main.temp} °C
-                            {item.weather.description}
-                        </Text>
-                    )}
-                />
+                <Card>
+                    {citylist.map((cityElement) => (
+                        <City key={cityElement.id} cityData={cityElement} navigation={navigation} />
+                    ))}
+                </Card>
             ) : (
                 <Text> No Cities were found</Text>
             )}
-        </View>
+        </Content>
     )
 }
 

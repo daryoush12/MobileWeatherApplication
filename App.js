@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler'
 import React, { Component } from 'react'
 import CityWeathersView from './src/Views/CityWeathersView'
 import store from './src/Store'
@@ -5,6 +6,11 @@ import { Provider } from 'react-redux'
 import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
 import { Ionicons } from '@expo/vector-icons'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import CityView from './src/Views/CityView'
+
+const Stack = createStackNavigator()
 
 export default class App extends Component {
     constructor(props) {
@@ -30,7 +36,20 @@ export default class App extends Component {
 
         return (
             <Provider store={store}>
-                <CityWeathersView></CityWeathersView>
+                <NavigationContainer>
+                    <Stack.Navigator
+                        initialRouteName="WeathersView"
+                        screenOptions={{
+                            headerShown: false,
+                        }}
+                    >
+                        <Stack.Screen
+                            name="WeathersView"
+                            component={CityWeathersView}
+                        ></Stack.Screen>
+                        <Stack.Screen name="CityView" component={CityView}></Stack.Screen>
+                    </Stack.Navigator>
+                </NavigationContainer>
             </Provider>
         )
     }
