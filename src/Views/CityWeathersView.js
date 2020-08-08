@@ -10,7 +10,7 @@ class CityWeathersView extends Component {
         Was not aware of the cycle functions deprecating 
         will have to do with this for now:  
     */
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         const { dispatch } = this.props
         dispatch(getCities())
     }

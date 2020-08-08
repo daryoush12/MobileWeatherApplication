@@ -18,7 +18,6 @@ import { Divider } from 'react-native-material-ui'
 
 export default function CityView({ route, navigation }) {
     const { cityDetails } = route.params
-    console.log(cityDetails)
     return (
         <Container>
             <Header>

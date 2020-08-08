@@ -5,7 +5,6 @@ import { Content, Card, H3, CardItem } from 'native-base'
 import { Divider } from 'react-native-material-ui'
 
 function CityList({ citylist, foundCity, navigation }) {
-    console.log(citylist)
     return (
         <Content>
             {citylist ? (
