@@ -18,7 +18,6 @@ class CityWeathersView extends Component {
     render() {
         const { weatherData } = this.props
         const { navigation } = this.props
-        console.log(weatherData)
         return (
             <Container>
                 <Header>
