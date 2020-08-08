@@ -47,7 +47,6 @@ export default function CityView({ route, navigation }) {
                                 uri: 'http://openweathermap.org/img/w/' + weather.icon + '.png',
                             }}
                         />
-                        <Text>State: {weather.description}</Text>
                         <Text>{weather.description}</Text>
                     </Content>
                 ))}
