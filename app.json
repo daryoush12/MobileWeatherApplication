@@ -7,6 +7,8 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": "A simple weather application",
+    "githubUrl": "https://github.com/daryoush12/MobileWeatherApplication"
   }
 }

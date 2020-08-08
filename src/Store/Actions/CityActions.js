@@ -1,8 +1,8 @@
-import cities from './Types/index'
+import actiontypes from './Types/'
 
 export function getCities() {
     return {
-        type: 'GETCITIES',
+        types: actiontypes.cities.GET_CITIES,
         payload: {
             request: {
                 method: 'GET',
@@ -15,7 +15,7 @@ export function getCities() {
 
 export function getCityByName(name) {
     return {
-        type: 'FIND_CITIES_BY_SEARCHVALUE',
+        type: actiontypes.cities.GET_CITIES_BY_SEARCHVALUE,
         payload: {
             name: name,
         },
