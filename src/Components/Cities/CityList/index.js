@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import City from '../City'
 import { Text } from 'react-native'
 import { Content, Card } from 'native-base'

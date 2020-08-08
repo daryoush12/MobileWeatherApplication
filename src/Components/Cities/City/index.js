@@ -5,7 +5,17 @@ import { StyleSheet, Image } from 'react-native'
 export default function City({ cityData, navigation }) {
     return (
         <CardItem>
-            <Text style={styles.itemTitle}>{cityData.name}</Text>
+            {cityData.weather[0] ? (
+                <Image
+                    style={{ width: 50, height: 50 }}
+                    source={{
+                        uri: 'http://openweathermap.org/img/w/' + cityData.weather[0].icon + '.png',
+                    }}
+                />
+            ) : (
+                <></>
+            )}
+            <Text style={styles.cityTitle}>{cityData.name}</Text>
 
             <Right>
                 <Button
@@ -20,7 +30,7 @@ export default function City({ cityData, navigation }) {
 }
 
 const styles = StyleSheet.create({
-    itemTitle: {
+    cityTitle: {
         fontSize: 20,
         width: 150,
     },

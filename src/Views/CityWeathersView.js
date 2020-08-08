@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getCities } from '../Store/Actions/CityActions'
-import { Container, Header, Left, Body, Right, Title, Content } from 'native-base'
+import { Container, Header, Body, Right, Title, Content } from 'native-base'
 import CityList from '../Components/Cities/CityList'
 import CityFilterBar from '../Components/Cities/CityFilterBar'
 

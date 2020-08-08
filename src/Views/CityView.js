@@ -42,9 +42,9 @@ export default function CityView({ route, navigation }) {
                 {cityDetails.weather.map((weather) => (
                     <Content key={weather.id}>
                         <Image
-                            styles={styles.tiny}
+                            style={{ width: 50, height: 50 }}
                             source={{
-                                uri: 'http://openweathermap.org/img/w/04d.png',
+                                uri: 'http://openweathermap.org/img/w/' + weather.icon + '.png',
                             }}
                         />
                         <Text>State: {weather.description}</Text>
