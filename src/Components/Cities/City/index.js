@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardItem, Text, Icon, Right, Button } from 'native-base'
+import { CardItem, Text, Right, Button } from 'native-base'
 import { StyleSheet, Image } from 'react-native'
 
 export default function City({ cityData, navigation }) {
@@ -22,7 +22,7 @@ export default function City({ cityData, navigation }) {
                     transparent
                     onPress={() => navigation.navigate('CityView', { cityDetails: cityData })}
                 >
-                    <Icon name="arrow-forward" />
+                    <Text>View</Text>
                 </Button>
             </Right>
         </CardItem>

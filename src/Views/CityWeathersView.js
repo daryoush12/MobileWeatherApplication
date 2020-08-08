@@ -10,7 +10,7 @@ class CityWeathersView extends Component {
         Was not aware of the cycle functions deprecating 
         will have to do with this for now:  
     */
-    UNSAFE_componentWillMount() {
+    componentWillMount() {
         const { dispatch } = this.props
         dispatch(getCities())
     }
@@ -18,6 +18,7 @@ class CityWeathersView extends Component {
     render() {
         const { weatherData } = this.props
         const { navigation } = this.props
+
         return (
             <Container>
                 <Header>
@@ -30,9 +31,8 @@ class CityWeathersView extends Component {
                 <CityFilterBar></CityFilterBar>
                 <Content>
                     <CityList
-                        citylist={
-                            weatherData.filteredData ? weatherData.filteredData : weatherData.list
-                        }
+                        foundCity={weatherData.foundCity}
+                        citylist={weatherData.data ? weatherData.data.list : undefined}
                         navigation={navigation}
                     ></CityList>
                 </Content>
