@@ -1,21 +1,21 @@
 import React from 'react'
 import City from '../City'
 import { Text } from 'react-native'
-import { Content, Card, H3, CardItem } from 'native-base'
+import { Content, H3, CardItem, List, ListItem } from 'native-base'
 import { Divider } from 'react-native-material-ui'
 
-function CityList({ citylist, foundCity, navigation }) {
+function CityList({ citylist, foundCity }) {
     return (
         <Content>
             {citylist ? (
-                <Card>
+                <List>
                     {foundCity ? (
                         <>
-                            <CardItem>
+                            <ListItem>
                                 <H3>Found a city with your search</H3>
-                            </CardItem>
+                            </ListItem>
                             <Divider></Divider>
-                            <City cityData={foundCity} navigation={navigation} />
+                            <City cityData={foundCity} />
                         </>
                     ) : (
                         <></>
@@ -27,9 +27,9 @@ function CityList({ citylist, foundCity, navigation }) {
                     <Divider></Divider>
 
                     {citylist.map((cityElement) => (
-                        <City key={cityElement.id} cityData={cityElement} navigation={navigation} />
+                        <City key={cityElement.id} cityData={cityElement} />
                     ))}
-                </Card>
+                </List>
             ) : (
                 <Text> No Cities were found</Text>
             )}

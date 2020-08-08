@@ -18,7 +18,7 @@ class CityWeathersView extends Component {
     render() {
         const { weatherData } = this.props
         const { navigation } = this.props
-
+        console.log(weatherData)
         return (
             <Container>
                 <Header>
@@ -33,7 +33,6 @@ class CityWeathersView extends Component {
                     <CityList
                         foundCity={weatherData.foundCity}
                         citylist={weatherData.data ? weatherData.data.list : undefined}
-                        navigation={navigation}
                     ></CityList>
                 </Content>
             </Container>

@@ -20,6 +20,7 @@ class CityFilterBar extends Component {
                 <Input
                     onChangeText={this.handleInput}
                     value={this.state.searchValue}
+                    onEndEditing={this.handleSubmit}
                     placeholder="search by city or country.."
                 ></Input>
                 <Button transparent onPress={this.handleSubmit}>
@@ -31,6 +32,7 @@ class CityFilterBar extends Component {
 
     handleInput(text) {
         this.setState({ searchValue: text })
+        console.log(this.state.searchValue)
     }
 
     handleSubmit() {

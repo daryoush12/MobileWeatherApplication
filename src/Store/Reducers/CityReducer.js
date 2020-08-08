@@ -2,7 +2,7 @@ import actions from '../Actions/Types'
 
 const initialState = {}
 
-const CityReducer = (state = initialState, action) => {
+function CityReducer(state = initialState, action) {
     switch (action.type) {
         case actions.cities.GET_CITIES_SUCCESS: {
             return { ...state, data: action.payload.data }
@@ -14,7 +14,7 @@ const CityReducer = (state = initialState, action) => {
             }
         }
         case actions.cities.GET_CITIES_BY_SEARCHVALUE_FAILURE: {
-            return { ...state, foundCity: undefined }
+            return { ...state, foundCity: null }
         }
         default:
             return { ...state }

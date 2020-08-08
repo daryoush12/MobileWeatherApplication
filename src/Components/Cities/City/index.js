@@ -1,31 +1,36 @@
 import React from 'react'
-import { CardItem, Text, Right, Button } from 'native-base'
+import { CardItem, Text, Right, Button, ListItem, Body, Left } from 'native-base'
 import { StyleSheet, Image } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
-export default function City({ cityData, navigation }) {
+export default function City({ cityData }) {
+    const navigation = useNavigation()
     return (
-        <CardItem>
-            {cityData.weather[0] ? (
-                <Image
-                    style={{ width: 50, height: 50 }}
-                    source={{
-                        uri: 'http://openweathermap.org/img/w/' + cityData.weather[0].icon + '.png',
-                    }}
-                />
-            ) : (
-                <></>
-            )}
-            <Text style={styles.cityTitle}>{cityData.name}</Text>
-
-            <Right>
-                <Button
-                    transparent
-                    onPress={() => navigation.navigate('CityView', { cityDetails: cityData })}
-                >
-                    <Text>View</Text>
-                </Button>
-            </Right>
-        </CardItem>
+        <ListItem>
+            <Left>
+                {cityData.weather[0] ? (
+                    <Image
+                        style={{ width: 50, height: 50 }}
+                        source={{
+                            uri:
+                                'http://openweathermap.org/img/w/' +
+                                cityData.weather[0].icon +
+                                '.png',
+                        }}
+                    />
+                ) : (
+                    <></>
+                )}
+                <Text style={styles.cityTitle}>{cityData.name}</Text>
+            </Left>
+            <Body></Body>
+            <Button
+                transparent
+                onPress={() => navigation.navigate('CityView', { cityDetails: cityData })}
+            >
+                <Text>View</Text>
+            </Button>
+        </ListItem>
     )
 }
 

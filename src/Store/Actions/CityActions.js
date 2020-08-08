@@ -7,7 +7,7 @@ export function getCities() {
             request: {
                 method: 'GET',
                 url:
-                    'find?lat=40&lon=37.5&cnt=10&units=metric&appid=50f578d622c291089e8f21a8d2730398',
+                    'find?lat=60.16952&lon=24.93545&cnt=50&units=metric&appid=50f578d622c291089e8f21a8d2730398',
             },
         },
     }

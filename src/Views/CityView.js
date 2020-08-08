@@ -11,10 +11,9 @@ import {
     Icon,
     Text,
     H3,
+    Card,
+    CardItem,
 } from 'native-base'
-
-import { StyleSheet, Image } from 'react-native'
-import { Divider } from 'react-native-material-ui'
 
 export default function CityView({ route, navigation }) {
     const { cityDetails } = route.params
@@ -32,31 +31,33 @@ export default function CityView({ route, navigation }) {
                 <Right />
             </Header>
             <Content>
-                <H3>Main Information</H3>
-                <Text>Temperature: {cityDetails.main.temp} °C</Text>
-                <Text>Humidity: {cityDetails.main.humidity}</Text>
-                <Text>Temperature feel: {cityDetails.main.feels_like} °C</Text>
-
-                <H3>Weather</H3>
-                {cityDetails.weather.map((weather) => (
-                    <Content key={weather.id}>
-                        <Image
-                            style={{ width: 50, height: 50 }}
-                            source={{
-                                uri: 'http://openweathermap.org/img/w/' + weather.icon + '.png',
-                            }}
-                        />
-                        <Text>{weather.description}</Text>
-                    </Content>
-                ))}
+                <Card>
+                    <CardItem>
+                        <H3>Main Information</H3>
+                    </CardItem>
+                    <CardItem>
+                        <Body>
+                            <Text>Temperature: {cityDetails.main.temp} °C</Text>
+                            <Text>Humidity: {cityDetails.main.humidity}</Text>
+                            <Text>Feel: {cityDetails.main.feels_like} °C</Text>
+                        </Body>
+                    </CardItem>
+                    <CardItem>
+                        <H3>Weather</H3>
+                    </CardItem>
+                    {cityDetails.weather.map((weather) => (
+                        <CardItem key={weather.id}>
+                            <Image
+                                style={{ width: 50, height: 50 }}
+                                source={{
+                                    uri: 'http://openweathermap.org/img/w/' + weather.icon + '.png',
+                                }}
+                            />
+                            <Text>{weather.description}</Text>
+                        </CardItem>
+                    ))}
+                </Card>
             </Content>
         </Container>
     )
 }
-
-const styles = StyleSheet.create({
-    tiny: {
-        width: 50,
-        height: 50,
-    },
-})
