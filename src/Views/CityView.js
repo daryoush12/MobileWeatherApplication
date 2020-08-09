@@ -15,6 +15,8 @@ import {
     CardItem,
 } from 'native-base'
 
+import { Image } from 'react-native'
+
 export default function CityView({ route, navigation }) {
     const { cityDetails } = route.params
     return (

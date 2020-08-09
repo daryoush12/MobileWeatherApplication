@@ -32,7 +32,6 @@ class CityFilterBar extends Component {
 
     handleInput(text) {
         this.setState({ searchValue: text })
-        console.log(this.state.searchValue)
     }
 
     handleSubmit() {
