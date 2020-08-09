@@ -6,26 +6,18 @@ import CityList from '../Components/Cities/CityList'
 import CityFilterBar from '../Components/Cities/CityFilterBar'
 
 class CityWeathersView extends Component {
-    constructor() {
-        super()
-        this.state = {
-            dataLoaded: false,
-        }
-    }
-
     /*
         Was not aware of the cycle functions deprecating 
         will have to do with this for now:  
     */
     UNSAFE_componentWillMount() {
-        if (!this.props.weatherData) {
-            const { dispatch } = this.props
-            dispatch(getCities())
-        }
+        const { dispatch } = this.props
+        dispatch(getCities())
     }
 
     render() {
         const { weatherData } = this.props
+        const { navigation } = this.props
         return (
             <Container>
                 <Header>
